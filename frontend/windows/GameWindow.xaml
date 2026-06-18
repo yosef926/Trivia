@@ -1,0 +1,84 @@
+﻿<Window x:Class="TriviaClient.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TRIVIA" Height="560" Width="450"
+        Background="#0a0e1a" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Style x:Key="AnswerButton" TargetType="Button">
+            <Setter Property="Height" Value="55"/>
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Foreground" Value="#00f5ff"/>
+            <Setter Property="Background" Value="#0d1526"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#00f5ff"/>
+            <Setter Property="Margin" Value="0,6,0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
+                                              Margin="10"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#00f5ff"/>
+                                <Setter Property="Foreground" Value="#0a0e1a"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="320">
+
+        <!-- Header: Title + Timer -->
+        <Grid Margin="0,0,0,10">
+            <TextBlock Text="TRIVIA" FontSize="28" FontWeight="Bold"
+                       Foreground="#00f5ff" FontFamily="Consolas"
+                       HorizontalAlignment="Left"/>
+            <Border Background="#0d1526" BorderBrush="#00f5ff" BorderThickness="1"
+                    CornerRadius="3" Padding="12,4" HorizontalAlignment="Right">
+                <TextBlock Name="TimerText" Text="00"
+                           Foreground="#00f5ff" FontFamily="Consolas"
+                           FontSize="18" FontWeight="Bold"/>
+            </Border>
+        </Grid>
+
+        <!-- Status bar: remaining / correct -->
+        <Grid Margin="0,0,0,15">
+            <TextBlock Name="RemainingText" Text="QUESTIONS LEFT: 0"
+                       Foreground="#4a6fa5" FontFamily="Consolas" FontSize="11"
+                       HorizontalAlignment="Left"/>
+            <TextBlock Name="CorrectText" Text="CORRECT: 0"
+                       Foreground="#4a6fa5" FontFamily="Consolas" FontSize="11"
+                       HorizontalAlignment="Right"/>
+        </Grid>
+
+        <Rectangle Height="1" Fill="#00f5ff" Opacity="0.3" Margin="0,0,0,20"/>
+
+        <!-- Question -->
+        <Border Background="#0d1526" BorderBrush="#00f5ff" BorderThickness="1"
+                CornerRadius="3" Padding="15" Margin="0,0,0,20" MinHeight="80">
+            <TextBlock Name="QuestionText"
+                       Text="Question text goes here"
+                       Foreground="#00f5ff" FontFamily="Consolas"
+                       FontSize="15" TextWrapping="Wrap"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+
+        <!-- Answers -->
+        <Button Name="Answer1Btn" Content="Answer 1" Click="AnswerBtn_Click" Tag="0" Style="{StaticResource AnswerButton}"/>
+        <Button Name="Answer2Btn" Content="Answer 2" Click="AnswerBtn_Click" Tag="1" Style="{StaticResource AnswerButton}"/>
+        <Button Name="Answer3Btn" Content="Answer 3" Click="AnswerBtn_Click" Tag="2" Style="{StaticResource AnswerButton}"/>
+        <Button Name="Answer4Btn" Content="Answer 4" Click="AnswerBtn_Click" Tag="3" Style="{StaticResource AnswerButton}"/>
+
+    </StackPanel>
+</Window>
