@@ -4,7 +4,7 @@ A multiplayer trivia game built with a multithreaded C++ server and a C# WPF fro
 
 ## Screenshots
 
-![Screenshot]([https://via.placeholder.com/800x400?text=Screenshot](https://github.com/yosef926/Trivia/blob/main/GameScreenShots.jpg))
+![Screenshot](https://github.com/yosef926/Trivia/blob/main/GameScreenShots.jpg?raw=true).
 
 ## Features
 
