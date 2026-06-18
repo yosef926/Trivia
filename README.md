@@ -2,6 +2,10 @@
 
 A multiplayer trivia game built with a multithreaded C++ server and a C# WPF frontend. It uses socket programming to handle concurrent players, real-time lobby management, user auth, and live gameplay state updates smoothly.
 
+## Screenshots
+
+![Screenshot](https://via.placeholder.com/800x400?text=Screenshot)
+
 ## Features
 
 * **Multithreaded Server:** Handles multiple concurrent player sessions efficiently without blocking the core game loop.
@@ -27,3 +31,4 @@ cd trivia
 ---
 
 Made by [yosef926](https://github.com/yosef926)
+
