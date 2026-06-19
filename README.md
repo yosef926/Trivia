@@ -26,6 +26,19 @@ A multiplayer trivia game built with a multithreaded C++ server and a C# WPF fro
 ```bash
 git clone https://github.com/yosef926/trivia.git
 cd trivia
+make
+```
+
+## Run the Backend
+
+```bash
+.\backend_server.exe
+```
+
+## Run the Frontend
+
+```bash
+.\frontend\bin\Release\net8.0-windows\TriviaClient.exe
 ```
 
 ---
